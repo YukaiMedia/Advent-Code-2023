@@ -7,12 +7,8 @@ $NumCode	=	$Code01.code -replace "[a-zA-Z]", ""			# remove alphas
 
 
 foreach ($line in $NumCode)
+
 {
-	$lineSwith	=	$line
-	switch ($lineSwith) {
-		{$lineSwith -lt 10} { Write-Host $line }
-		{$lineSwith -lt 100} { Write-Host $line }
-	}
-	
-	
+	$number	=	[int]$line
+	if ($number -ilt 10) {write-host "$line <10"}
 }
