@@ -10,5 +10,12 @@ foreach ($line in $NumCode)
 
 {
 	$number	=	[int]$line
-	if ($number -ilt 10) {write-host "$line <10"}
+	switch ($number) {
+		{$_ -lt 10} { Write-Host "$_$_" }
+		{($_ -lt 100) -and ($_ -gt 9)} { Write-Host "$_" }
+		{$_ -gt 99)} 
+			{
+				
+			}
+	}
 }
