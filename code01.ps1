@@ -14,7 +14,7 @@ foreach ($line in $NumCode)
 		{($_ -lt 100) -and ($_ -gt 9)} { Write-Host "$_" }
 		{$_ -gt 99)} 
 			{
-				
+				while($_ -gt 99) {}
 			}
 	}
 }
