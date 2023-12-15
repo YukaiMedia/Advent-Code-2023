@@ -2,6 +2,7 @@
 
 
 $Code01		=	import-csv -Path .\code01.csv -Header code								# import list
+$Code01		=	Get-Content .\input.txt
 $NumCode	=	$Code01.code -replace "[a-zA-Z]", "" | Export-Csv -path .\code02.csv	# remove alphas
 
 
