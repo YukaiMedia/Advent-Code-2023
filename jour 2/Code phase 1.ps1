@@ -5,12 +5,15 @@
 $inputCode		=	Get-Content .\input.txt
 $total			=	0
 
-$RedMax			=	12
-$GreenMax		=	13
-$BlueMax		=	14
+$RedMax			=	"12 red"
+$GreenMax		=	"13 green"
+$BlueMax		=	"14 blue"
 
-$code			=	$inputCode -replace ":",","`
-					-replace ", ",","`
-					-replace "red", ",red"`
-					-replace "green", ",green"`
-					-replace "blue", ",blue"
+# mise en tableau...
+foreach ($line in $inputCode) {
+	conv2table $line
+}
+
+# $CSVtable = conv2table $inputCode | ConvertFrom-Csv -Delimiter "," -header 'game','num1','color1','num2','color2','num3','color3'
+
+

@@ -9,16 +9,10 @@ Function RemAlpha ($code) {
 function SchrinkNum ($Numline) {
 	switch ($Numline) {
 		{$Numline.length -eq 1} { $numline	=	"$Numline$Numline" }
-		{$Numline.length -gt 2} { 
-			do {
-				$numline	=	$Numline.remove(1,1)
-			} until (
-				$Numline.length -eq 2 
-			)
+		{$Numline.length -gt 2} { $numline	=	$numline.substring(0,1)+$numline.substring($numline.length-1,1)		
 		}
 	}
-	$number		=	$Numline
-	return $number
+	return $Numline
 }
 
 function Conv2num ($code) {
