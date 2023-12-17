@@ -8,5 +8,7 @@ $total			=	0
 $inputCode		=	RemAlpha $inputCode			# removes alpha
 
 foreach ($line in $inputcode) {
-	$line	=	SchrinkNum $line
+	$line	=	SchrinkNum $line				# shrinks to 2 digits !
+	$total	+=	[int]$line
 }
+Write-Host $total
