@@ -5,15 +5,17 @@
 $inputCode		=	Get-Content .\input.txt
 $total			=	0
 
-$RedMax			=	"12 red"
-$GreenMax		=	"13 green"
-$BlueMax		=	"14 blue"
+$RedMax			=	"12"
+$GreenMax		=	"13"
+$BlueMax		=	"14"
 
 # mise en tableau...
-foreach ($line in $inputCode) {
+$CSVtable = foreach ($line in $inputCode) {
 	conv2table $line
 }
 
-# $CSVtable = conv2table $inputCode | ConvertFrom-Csv -Delimiter "," -header 'game','num1','color1','num2','color2','num3','color3'
+$CSVtable = $CSVtable | ConvertFrom-Csv -Delimiter "," -header 'game','num1','color1','num2','color2','num3','color3'
 
 
+$col = 2
+$CSVtable | Where-Object { $CSVtable[$col] -match "red" -and [int]$CSVtable[$col-1] -gt $RedMax} | ft    
